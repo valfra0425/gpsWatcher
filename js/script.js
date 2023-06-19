@@ -1,6 +1,5 @@
 // opções do geolocalization
 const options = {
-
     enableHighAccuracy: true,
     // tempo máximo que a aplicação aceita para uma posição no cache
     maximumAge: 10000,
@@ -45,7 +44,9 @@ function success(position) {
     }
 
     // marcador da posição do dispositivo
-    marker = L.marker([lat, lon]).addTo(map);
+    marker = L.marker([lat, lon])
+        .addTo(map)
+        .bindPopup("aqui está você!!!");
 
     // circulo com raio igual a precisão da localização
     circle = L.circle([lat, lon], {
